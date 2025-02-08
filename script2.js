@@ -12,7 +12,6 @@ const noBtn = document.querySelector("#noBtn");
 const heading = document.querySelector("h1");
 const gif = document.querySelector("#yesGif");
 
-// Initial font size in pixels
 let yesSize = 18;
 
 // "Yes" button click event
@@ -21,6 +20,8 @@ yesBtn.addEventListener("click", () => {
   gif.src = "./gifs/yess.gif";
   noBtn.style.display = "none";
   yesBtn.style.display = "hidden";
+  yesBtn.style.fontSize = "18px";
+  yesBtn.style.padding = "9px 18px";
 
   // Confetti Effect 🎉
   party.confetti(yesBtn, {
@@ -30,7 +31,8 @@ yesBtn.addEventListener("click", () => {
 
 // "No" button click event: Increase Yes Button size
 noBtn.addEventListener("click", () => {
-  const randomMessage = noMessages[Math.floor(Math.random() * noMessages.length)];
+  const randomMessage =
+    noMessages[Math.floor(Math.random() * noMessages.length)];
   heading.innerText = randomMessage;
   gif.src = "./gifs/no5.gif";
 
